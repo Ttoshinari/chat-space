@@ -24,22 +24,22 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- belongs_to :groups
+- belongs_to :group
 - belongs_to :user
-- belongs_to :messages
+- belongs_to :message
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|members_id|integer|null: false, foreign_key: true|
+|member_id|integer|null: false, foreign_key: true|
 |text|text|null: false|
 |image|text|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :members
+- belongs_to :member
 - has_many :groups, through: members
 
 ## groupsテーブル
@@ -47,7 +47,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|members_id|integer|null: false, foreign_key: true|
+|member_id|integer|null: false, foreign_key: true|
 |title|string|null: false|
 
 
