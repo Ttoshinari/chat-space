@@ -42,7 +42,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
-|name|string|null: false,add_index :user, :name|
+|name|string|null: false,index: true|
 
 
 ### Association
