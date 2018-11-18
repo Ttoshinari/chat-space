@@ -18,7 +18,7 @@
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
-|text|text|null: false|
+|text|text|
 |image|text|
 
 ### Association
@@ -41,8 +41,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, foreign_key: true|
-|name|string|null: false|
+|email|string|null: false|
+|name|string|null: false,add_index :user, :name|
+
 
 ### Association
 - has_many :members
