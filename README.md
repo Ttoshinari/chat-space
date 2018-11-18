@@ -7,6 +7,10 @@
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 
+### Association
+- belongs_to :user
+- belongs_to :group
+
 
 ## messagesテーブル
 
@@ -15,7 +19,7 @@
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 |text|text|null: false|
-|image|text|null: false|
+|image|text|
 
 ### Association
 - belongs_to :user
@@ -25,11 +29,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|title|string|null: false|
+|name|string|null: false|
 
 
 ### Association
-  has_many :members
+- has_many :members
 - has_many :users, through: :members
 - has_many :messages
 
@@ -37,17 +41,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|email|string|null: false, foreign_key: true|
 |name|string|null: false|
 
 ### Association
-  has_many :members
+- has_many :members
 - has_many :groups, through: :members
 - has_many :messages
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
