@@ -15,15 +15,16 @@ input.font-awesome {
     line-height: 100px;
     height: 100px;
     padding: 0 20px;
-  }
-  .side-header-name {
+    &-name {
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
-  }
-  .side-header-lists {
+    }
+    &-lists {
     display: inline-block;
     float: right;
+
+}
     .list {
       display: inline-block;
     }
@@ -49,19 +50,19 @@ input.font-awesome {
     box-sizing: border-box;
     .left-header {
       float: left;
-    }
-    .left-header_title {
+      &_title {
       color: black;
       font-size: 20px;
       margin-top: 35px;
       padding-left: 20px;
     }
-    .left-header_members {
+      &_members {
       display: flex;
       color: #999;
       font-size: 12px;
       margin-top: 15px;
       padding-left: 20px;
+    }
       .member {
         display: flex;
         padding-left: 5px;
@@ -77,10 +78,9 @@ input.font-awesome {
   margin-top: 30px;
   padding: 0 20px;
   color: #38AEF0;
-}
-
-.right-header_button {
+  &_button {
   text-decoration: none;
+}
 }
 
 .chat .content {
@@ -88,26 +88,25 @@ input.font-awesome {
   padding: 50px 50px 0;
   box-sizing: border-box;
   background-color: #FAFAFA;
-}
 
-.content {
+
+  &{
   width: 100%;
 }
-
-.chat .content .message {
+  & .message {
   margin-bottom: 40px;
   .message-header {
     display: flex;
+    }
   }
 }
-
 .content .message {
-  .message-header-user-name {
+    &-header-user-name {
     padding-left: 10px;
     font-weight: bold;
     font-size: 16px;
   }
-  .message-header-date {
+    &-header-date {
     padding-left: 10px;
     color: #999;
     font-size: 12px;
@@ -139,8 +138,11 @@ input.font-awesome {
   height: 90px;
   box-sizing: border-box;
   position: relative;
-}
 
+  &_image {
+  float: right;
+  }
+}
 #footer_new_message {
   height: 60px;
   width: 950px;
@@ -149,10 +151,6 @@ input.font-awesome {
   position: absolute;
   top: 15px;
   left: 15px;
-}
-
-.footer_image {
-  float: right;
 }
 
 .fa.fa-picture-o.icon {
