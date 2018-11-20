@@ -1,64 +1,76 @@
-.notification
+
 .wrapper
   .side-bar
     .header
       %h3.header_name 匿名
       %ul.header_lists
         %li.list
-          %a{:href => "/groups/new"}
+          %a
             %i.fa.fa-pencil-square-o.icon
-              \::before
         %li.list
-          %a{:href => "/userss/6682/edit"}
+          %a
             %i.fa.fa-cog.icon
-              \::before
     .groups
       .group
-        %a{:href => "/groups/16042/messages"}
-      .group
-        %a{:href => "/groups/16042/messages"}
-      .group
-        %a{:href => "/groups/16242/messages"}
-      .group
-        %a{:href => "/groups/16402/messages"}
-      .group
-        %a{:href => "/groups/16412/messages"}
-      .group
-        %a{:href => "/groups/16932/messages"}
-      .group
-        %a{:href => "/groups/23192/messages"}
+        %a
+          .group_name
+            Test
+          .group_message
+            いえーい
+
+
   .chat
     .header
       .left-header
+        .left-header_title
+          Test
+        %ul.left-header_members
+          Member
+          %li.member
+            ：匿名
       .right-header
+        %a.right-header_button EDIT
+
+
+
     .messages.js-messages
       .message
         .upper-message
-          .upper-message_user-name 匿名
+          .upper-message_user-name 寿成
           .upper-message_date 2018/05/26 08:24
         .lower-message
-          %p.lower-message_content aaaa
+          %p.lower-message_content とったどー
       .message
         .upper-message
+          .upper-message_user-name 高木
+          .upper-message_date 2018/06/45 07:34
         .lower-message
-      .message
-        .upper-message
-        .lower-message
-      .message
-        .upper-message
-        .lower-message
-      .message
-        .upper-message
-        .lower-message
-      .message
-        .upper-message
-        .lower-message
-      .message
-        .upper-message
-        .lower-message
-      .message
-        .upper-message
-        .lower-message
-    .form
-      %form#new_message.js-form{"accept-charset" => "UTF-8", :action => "/groups/16042/messages", :enctype => "multipart/form-data", :method => "post"}
+          %p.lower-message_content これぞコメント
+
+
+
+    .footer
+      #footer_new_message
+        #footer_message
+      .footer_image
+        %i.fa.fa-picture-o.icon
+        .send SEND
+
+
+
+
+    / .footer
+    /   %footer#new_message
+    /     %input#message_content
+    /       .footer_mask_image
+    /       %i.fa.fa-picture-o.icon
+    /       .SENT SENT
+
+
+
+
+
+
+
+
 
