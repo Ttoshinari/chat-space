@@ -1,9 +1,9 @@
 
 .wrapper
   .side-bar
-    .header
-      %h3.header_name 匿名
-      %ul.header_lists
+    .side-header
+      %h3.side-header-name 匿名
+      %ul.side-header-lists
         %li.list
           %a
             %i.fa.fa-pencil-square-o.icon
@@ -33,19 +33,19 @@
 
 
 
-    .messages.js-messages
+    .content
       .message
-        .upper-message
-          .upper-message_user-name 寿成
-          .upper-message_date 2018/05/26 08:24
-        .lower-message
-          %p.lower-message_content とったどー
+        .message-header
+          .message-header-user-name 寿成
+          .message-header-date 2018/05/26 08:24
+        .message-body
+          %p.message-body-content とったどー
       .message
-        .upper-message
-          .upper-message_user-name 高木
-          .upper-message_date 2018/06/45 07:34
-        .lower-message
-          %p.lower-message_content これぞコメント
+        .message-header
+          .message-header-user-name 高木
+          .message-header-date 2018/06/45 07:34
+        .message-body
+          %p.message-body-content これぞコメント
 
 
 

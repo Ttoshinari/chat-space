@@ -10,18 +10,18 @@ input.font-awesome {
   width: 300px;
   color: white;
   float: left;
-  .header {
+  .side-header {
     background-color: #253141;
     line-height: 100px;
     height: 100px;
     padding: 0 20px;
   }
-  .header_name {
+  .side-header-name {
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
   }
-  .header_lists {
+  .side-header-lists {
     display: inline-block;
     float: right;
     .list {
@@ -83,42 +83,42 @@ input.font-awesome {
   text-decoration: none;
 }
 
-.chat .messages {
+.chat .content {
   height: calc(100vh - 100px - 90px);
   padding: 50px 50px 0;
   box-sizing: border-box;
   background-color: #FAFAFA;
 }
 
-.messages.js-messages {
+.content {
   width: 100%;
 }
 
-.chat .messages .message {
+.chat .content .message {
   margin-bottom: 40px;
-  .upper-message {
+  .message-header {
     display: flex;
   }
 }
 
-.messages .message {
-  .upper-message_user-name {
+.content .message {
+  .message-header-user-name {
     padding-left: 10px;
     font-weight: bold;
     font-size: 16px;
   }
-  .upper-message_date {
+  .message-header-date {
     padding-left: 10px;
     color: #999;
     font-size: 12px;
   }
 }
 
-.chat .messages .message .lower-message {
+.chat .content .message .message-body {
   padding-left: 10px;
 }
 
-.messages .message .lower-message_content {
+.content .message .message-body-content {
   font-size: 13px;
   margin-top: 10px;
   padding-left: 0px;
@@ -172,6 +172,3 @@ input.font-awesome {
   padding: 20px 30px 15px 30px;
   color: white;
 }
-
-
-
