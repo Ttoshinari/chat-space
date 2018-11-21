@@ -10,23 +10,37 @@ input.font-awesome {
   width: 300px;
   color: white;
   float: left;
-  .side-header {
+  .header {
     background-color: #253141;
     line-height: 100px;
     height: 100px;
-    padding: 0 20px;
-    &-name {
+    padding: 0 40px;
+    .header__name {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
-    &-lists {
-    display: inline-block;
-    float: right;
+    // &-lists {
+    //   position:absolute;
+    //   right:0;
 
-}
+// }
     .list {
-      display: inline-block;
+      float:right;
+
+      .fa.fa-pencil-square-o.icon {
+        position:absolute;
+        top:0;
+        margin-top:45px;
+        margin-left:5px;
+}
+       .fa.fa-cog.icon {
+        position:absolute;
+        top: 0;
+        margin-top:45px;
+        margin-left:20px;
+       }
+
     }
 }
   .groups {
