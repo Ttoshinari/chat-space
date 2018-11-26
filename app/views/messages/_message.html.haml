@@ -1,11 +1,10 @@
 .message
-  .message-header
-    .message-header-user-name
-      = message.user.name
+  .message-header-user-name
+    = message.user.name
     .message-header-date
       = message.created_at
-    .message-body
-      - if message.text.present?
-        %p.message-body-content
-          = message.text
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  .message-body
+    - if message.text.present?
+      %p.message-body-content
+        = message.text
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
