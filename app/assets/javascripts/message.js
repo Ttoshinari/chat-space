@@ -18,16 +18,15 @@ $(function(){
           <p class ="message-body-content">${message.text}</p>
         </div>
         ${message_image}
-      </div>
-`
+      </div>`
     return html;
-  }
+    }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action")
-
+    console.log();
     $('form__submit').removeAttr('data-disable-with');
 
     $.ajax({
@@ -38,23 +37,17 @@ $(function(){
       processData: false,
       contentType: false
     })
-.done(function(data){
-  var html = buildHTML(data);
-  $(".content").append(html);
-  $(".form__message").val("")
-  $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
-   $('input').prop('disabled', false);
-  })
-.fail(function(){
-      alert('error');
- $('input').prop('disabled', false);
-    })
-return false;
-  })
-});
-
-
-
-// $(".form__submit").prop('disabled', true);
-
-
+    .done(function(data){
+      var html = buildHTML(data);
+      $(".content").append(html);
+      $(".form__message").val("")
+      $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
+       $('input').prop('disabled', false);
+      })
+    .fail(function(){
+          alert('error');
+     $('input').prop('disabled', false);
+      })
+      return false;
+      })
+    });
