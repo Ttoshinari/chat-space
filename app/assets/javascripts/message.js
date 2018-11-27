@@ -41,8 +41,8 @@ $(function(){
       $(".content").append(html);
       $(".form__message").val("")
       $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
-       $('input').prop('disabled', false);
-       $("input[type='reset']")
+      $('input').prop('disabled', false);
+      $ ( "#new_message" ).reset();
       })
     .fail(function(){
           alert('error');
