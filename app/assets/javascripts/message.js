@@ -40,14 +40,9 @@ $(function(){
       var html = buildHTML(data);
       $(".content").append(html);
       $(".form__message").val("")
-      function submitForm() {
-        document.getElementById( "#new_message" ).submit();
-      }
-      function resetForm() {
-        document.getElementById( "#new_message" ).reset();
-      }
       $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
        $('input').prop('disabled', false);
+       $("input[type='reset']")
       })
     .fail(function(){
           alert('error');
