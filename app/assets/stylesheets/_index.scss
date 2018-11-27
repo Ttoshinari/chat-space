@@ -1,9 +1,9 @@
-input.font-awesome {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-}
+// input.font-awesome {
+//   font-family: FontAwesome;
+//   font-style: normal;
+//   font-weight: normal;
+//   text-decoration: inherit;
+// }
 
 .side-bar {
   box-sizing: border-box;
@@ -53,6 +53,7 @@ input.font-awesome {
     .chat {
       width: calc(100% - 300px);
       float: right;
+      position:relative;
       .header {
         height: 100px;
         padding: 0 40px;
@@ -91,18 +92,6 @@ input.font-awesome {
        }
      }
 
-//           .right-header {
-//             float: right;
-//             line-height: 40px;
-//             border: 1px solid #38AEF0;
-//             margin-top: 30px;
-//             padding: 0 20px;
-//             color: #38AEF0;
-//             &_button {
-//             text-decoration: none;
-// }
-// }
-
       .content {
         max-height: calc(100vh - 100px - 90px);
         padding: 50px 50px 20px;
@@ -112,38 +101,37 @@ input.font-awesome {
         float: right;
         width: 100%;
         .message {
-
+          height:100px;
+          width:600px;
+        }
+        .message-header {
+          font-size: 15px;
         }
         .message-header-user-name {
           padding-left: 10px;
           font-weight: bold;
           font-size: 16px;
-          margin-bottom: 40px;
         }
-        .message-header-date {
-          padding-left: 10px;
-          color: #999;
-          font-size: 12px;
-          display: flex;
+          .message-header-date {
+            padding-left: 10px;
+            color: #999;
+            font-size: 12px;
+            margin-left:80px;
+            margin-top:-21px;
+
+        }
+        .message-body-content {
+          font-size: 15px;
+          margin-top: 15px;
+          margin-left:10px;
         }
 }
 
-
-// .chat .content .message .message-body {
-//   padding-left: 10px;
-// }
-
-// .content .message .message-body-content {
-//   font-size: 13px;
-//   padding-left: 0px;
-// }
-
-  .footer {
-    background-color: #DDDDDD;
-    height: 90px;
-    box-sizing: border-box;
-    position: relative;
-    width:100%;
+.footer {
+  background-color: #DDDDDD;
+  height: 90px;
+  width:100%;
+  clear:both;
 }
 
   .form {
