@@ -111,15 +111,14 @@
           padding-left: 10px;
           font-weight: bold;
           font-size: 16px;
-          position:relative;
         }
           .message-header-date {
             padding-left: 10px;
             color: #999;
             font-size: 12px;
-            position:absolute;
-            left:85px;
-            bottom:102px;
+            margin-left:80px;
+            margin-top:-21px;
+
         }
         .message-body-content {
           font-size: 15px;
