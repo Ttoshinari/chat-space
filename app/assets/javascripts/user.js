@@ -39,7 +39,6 @@ $(function(){
     dataType:    "json"
   })
     .done(function(users){
-      $("#user-search-result").empty();
      if (write.length != 0 && users.length != 0 ) {
       users.forEach(function(user){
         var html = appendUser(user)
@@ -64,7 +63,7 @@ $(function(){
    $(document).on('click', '.user-search-remove', function() {
     var id = $(this).data('user-id');
     $(`#chat-group-user-${id}`).remove();
-  });
+    });
   });
 
 
