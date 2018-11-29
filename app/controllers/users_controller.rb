@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
 
-def index
+  before_action :authenticate_user!, only: :index
 
+
+def index
+  @users = User.where('name LIKE(?) and id != ?', "#{params[:name]}%", current_user)
+    respond_to do |format|
+      format.json
+    end
 end
 
 def edit
