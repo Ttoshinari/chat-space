@@ -31,15 +31,15 @@ $(function(){
 
 
   $("#user-search-field").on("keyup",function(e){
-    var write = $("#user-search-field").val();
+    var input = $("#user-search-field").val();
     $.ajax({
     type:        "GET",
     url:         "/users",
-    data:        {name: write},
+    data:        {name: input},
     dataType:    "json"
   })
     .done(function(users){
-     if (write.length != 0 && users.length != 0 ) {
+     if (input.length != 0 && users.length != 0 ) {
       users.forEach(function(user){
         var html = appendUser(user)
         search_list.append(html);
