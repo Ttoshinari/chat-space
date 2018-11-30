@@ -22,11 +22,6 @@ $(function(){
     return html;
     }
 
-
-
-
-
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -56,8 +51,6 @@ $(function(){
       return false;
     })
 
-
-
     var interval = setInterval(function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
         $.ajax({
@@ -66,7 +59,6 @@ $(function(){
           dataType: "json"
         })
         .done(function(json) {
-          console.log(json)
           var id = $('.message').last().data('messageId')
           var insertHTML = '';
           json.messages.forEach(function(message) {
@@ -83,7 +75,5 @@ $(function(){
         clearInterval(interval);
       }
     }, 5 * 1000 );
-
-
 });
 
