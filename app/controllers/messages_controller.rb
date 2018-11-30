@@ -3,8 +3,12 @@ class MessagesController < ApplicationController
     before_action :set_group
 
   def index
-    @message = Message.new
-    @messages = @group.messages.includes(:user)
+    @message = @group.messages.new
+    @messages = @group.messages.order(created_at: :ASC).includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
