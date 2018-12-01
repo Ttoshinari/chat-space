@@ -69,7 +69,7 @@ $(function(){
           $('.content').prepend(insertHTML);
         })
         .fail(function(json_new_messages) {
-          console.log('自動更新に失敗しました');
+          alert('自動更新に失敗しました');
         });
       } else {
         clearInterval(interval);
