@@ -43,11 +43,37 @@ $(function(){
       $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
       $('input').prop('disabled', false);
       $("#new_message")[0].reset();
-      })
+    })
     .fail(function(){
           alert('error');
-     $('input').prop('disabled', false);
-      })
+      $('input').prop('disabled', false);
+    })
       return false;
-      })
-    });
+    })
+
+    var interval = setInterval(function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+        $.ajax({
+          type: "GET",
+          url: location.href,
+          dataType: "json"
+        })
+        .done(function(json_new_messages) {
+          var id = $('.message').last().data('messageId')
+          var insertHTML = '';
+          json.messages.forEach(function(message) {
+            if (message.id > id ) {
+              insertHTML += buildHTML(message);
+            }
+          });
+          $('.content').prepend(insertHTML);
+        })
+        .fail(function(json_new_messages) {
+          alert('自動更新に失敗しました');
+        });
+      } else {
+        clearInterval(interval);
+      }
+    }, 5 * 1000 );
+});
+
