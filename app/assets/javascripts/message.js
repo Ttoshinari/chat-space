@@ -58,7 +58,7 @@ $(function(){
           url: location.href,
           dataType: "json"
         })
-        .done(function(json) {
+        .done(function(json_new_messages) {
           var id = $('.message').last().data('messageId')
           var insertHTML = '';
           json.messages.forEach(function(message) {
@@ -68,7 +68,7 @@ $(function(){
           });
           $('.content').prepend(insertHTML);
         })
-        .fail(function(json) {
+        .fail(function(json_new_messages) {
           console.log('自動更新に失敗しました');
         });
       } else {
