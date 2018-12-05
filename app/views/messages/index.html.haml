@@ -6,10 +6,14 @@
   .chat
     .header
       .left-header
-        .left-header_title タイトル
-        .left-header_members MEMBER
-        .left-header_member takagi
-      .right-header Edit
+        .left-header_title
+          %h2.group #{@group.name}
+          %p.user
+            member：
+            -@group.users.each do |user|
+              #{user.name},
+      .right-header
+        = link_to "Edit", edit_group_path(@group), method: :get, class: 'edit-btn'
     .content
       = render @messages
 
@@ -19,8 +23,7 @@
       .form
         = form_for [@group, @message] do |f|
           = f.text_field :text, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
-              = fa_icon 'picture-o', class: 'icon'
-              = f.file_field :image, style: "display: none;"
-            = f.submit 'Send', class: 'form__submit'
+          %label.form__mask
+            %i.fa.fa-picture-o
+            = f.file_field :image,class: 'hidden', style: "display: none;"
+          = f.submit 'Send', class: 'form__submit'

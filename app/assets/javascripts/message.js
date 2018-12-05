@@ -23,7 +23,7 @@ $(function(){
     }
 
   $('#new_message').on('submit', function(e){
-    e.preventDefault();
+    // e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr("action")
     $('form__submit').removeAttr('data-disable-with');
@@ -61,7 +61,7 @@ $(function(){
         .done(function(json_new_messages) {
           var id = $('.message').last().data('messageId')
           var insertHTML = '';
-          json.messages.forEach(function(message) {
+          json_new_messages.messages.forEach(function(message) {
             if (message.id > id ) {
               insertHTML += buildHTML(message);
             }
@@ -74,6 +74,6 @@ $(function(){
       } else {
         clearInterval(interval);
       }
-    }, 5 * 1000 );
+    }, 5000 );
 });
 
