@@ -6,19 +6,15 @@ $(function(){
     }
 
     var html =
-    `<div class="message">
-        <div class = "message-header-user-name">
-            ${message.user_name}
-        </div>
-          <div class = "message-header-date">
-            ${message.created_at}
-          </div>
-
+    `<div class="message" data-message-id = ${message.id} >
+        <div class = "message-header-user-name">${message.name}</div>
+        <div class = "message-header-date">${message.date}</div>
         <div class = "message-body">
-          <p class ="message-body-content">${message.text}</p>
-        </div>
+        <p class ="message-body-content">${message.text}</p>
         ${message_image}
+        </div>
       </div>`
+
     return html;
     }
 
@@ -59,17 +55,17 @@ $(function(){
           dataType: "json"
         })
         .done(function(json_new_messages) {
-          var id = $('.message').last().data('messageId')
+          var id = $('.message').last().data('message-id')
           var insertHTML = '';
           json_new_messages.messages.forEach(function(message) {
             if (message.id > id ) {
               insertHTML += buildHTML(message);
             }
           });
-          $('.content').prepend(insertHTML);
+          $('.content').append(insertHTML);
         })
         .fail(function(json_new_messages) {
-          alert('自動更新に失敗しました');
+          console.log('自動更新に失敗しました');
         });
       } else {
         clearInterval(interval);
