@@ -32,13 +32,15 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
+    .done(function(data) {
+      if (data.id){
       var html = buildHTML(data);
       $(".content").append(html);
       $(".form__message").val("")
       $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
       $('input').prop('disabled', false);
       $("#new_message")[0].reset();
+      }
     })
     .fail(function(){
           alert('error');
@@ -46,7 +48,6 @@ $(function(){
     })
       return false;
     })
-
     var interval = setInterval(function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
         $.ajax({
@@ -63,6 +64,7 @@ $(function(){
             }
           });
           $('.content').append(insertHTML);
+          $('.content').animate({scrollTop: $(".content")[0].scrollHeight}, 1500);
         })
         .fail(function(json_new_messages) {
           console.log('自動更新に失敗しました');
